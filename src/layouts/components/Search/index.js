@@ -5,7 +5,7 @@ import { SearchIcon } from '~/components/Icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { useDebounce } from '~/hooks';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import AccountItem from '~/components/AccountItem';
