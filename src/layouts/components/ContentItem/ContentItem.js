@@ -8,6 +8,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 
 import AccountPreview from '~/components/SuggestedAccounts/AccountPreview';
 import Tippy from '@tippyjs/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMusic } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -21,6 +23,8 @@ function ContenItem(data) {
             </div>
         );
     };
+
+    console.log(data);
     return (
         <div>
             <div className={cx('account-item')}>
@@ -36,8 +40,12 @@ function ContenItem(data) {
                                 render={renderPreview}
                             >
                                 <div className={cx('auther')}>
-                                    <Link href="">{data.data.user.nickname}</Link>
-                                    <span>{data.data.nickname}</span>
+                                    <Link to={`/@${data.nickname}`} className={cx('auther-wrapper')}>
+                                        <h3 className={cx('h3-auther-title')}>{data.data.user.nickname}</h3>
+                                        <h4
+                                            className={cx('h4-auther-name')}
+                                        >{`${data.data.user.first_name} ${data.data.user.last_name}`}</h4>
+                                    </Link>
                                 </div>
                             </Tippy>
                         </div>
@@ -46,10 +54,19 @@ function ContenItem(data) {
                         </Button>
                         <div className={cx('video-desc')}>
                             <span>{data.data.description}</span>
-                            <Link href="">#aaa</Link>
+                            <Link href="">
+                                <strong> #tiktok-ui </strong>
+                            </Link>
                         </div>
                         <div className={cx('music-tag')}>
-                            <Link href="">{data.data.music}</Link>
+                            {data.data.music && (
+                                <h4 className={cx('h4link-music')}>
+                                    <Link href="/#">
+                                        <FontAwesomeIcon icon={faMusic} />
+                                        <div>{data.data.music}</div>
+                                    </Link>
+                                </h4>
+                            )}
                         </div>
                     </div>
                     <Video data={data.data} />

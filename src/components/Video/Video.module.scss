@@ -16,3 +16,32 @@ video {
     object-fit: cover;
     width: 100%;
 }
+
+.action-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.span_icon {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: all 200ms ease-in-out 0s;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(22, 24, 35, 0.06);
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+.strong-text {
+    color: rgba(22, 24, 35, 0.75);
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}

@@ -37,3 +37,61 @@
     top: 28px;
     right: 0px;
 }
+
+.auther-wrapper {
+    display: block;
+
+    .h3-auther-title {
+        display: inline-block;
+        margin-right: 4px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: var(--font-family);
+        font-weight: 700;
+    }
+    .h4-auther-name {
+        font-family: var(--font-family);
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
+    }
+}
+
+.video-desc {
+    line-height: 21px;
+    word-break: break-word;
+    font-size: 16px;
+    font-family: var(--font-family);
+    span {
+        display: inline-block;
+    }
+
+    a {
+        display: inline-block;
+        color: rgb(43, 93, 185);
+    }
+}
+
+.music-tag {
+    margin-bottom: 12px;
+
+    .h4link-music {
+        font-family: var(--font-family);
+        line-height: 21px;
+        margin-top: 2px;
+        margin-left: 2px;
+        font-weight: 400;
+        font-size: 14px;
+
+        a {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+
+            svg {
+                margin-right: 5px;
+            }
+        }
+    }
+}

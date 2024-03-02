@@ -7,12 +7,12 @@ import { faBookmark, faCommentDots, faHeart, faShare } from '@fortawesome/free-s
 
 const cx = classNames.bind(styles);
 
-function ActionItem(className, column = false, dataItem) {
+function ActionItem(className, column = false, data) {
     const classes = cx('wrapper', {
         [className]: className,
         column,
     });
-    console.log(dataItem);
+    console.log(data);
     return (
         <div className={classes}>
             <Button className={cx('btn_action-icon')}>

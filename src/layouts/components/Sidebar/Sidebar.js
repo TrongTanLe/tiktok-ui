@@ -9,9 +9,9 @@ import {
     UserGroupActiveIcon,
     LiveIcon,
     LiveActiveIcon,
-    ProfileIcon,
     FollowingIcon,
     ExploreIcon,
+    ProfileIconSidebar,
 } from '~/components/Icons';
 import * as userService from '~/services/userService';
 import config from '~/config';
@@ -51,17 +51,17 @@ function Sidebar() {
                     title="Following"
                     to={config.routes.following}
                     icon={<FollowingIcon />}
-                    activeIcon={<UserGroupActiveIcon />}
+                    activeIcon={<FollowingIcon />}
                 />
                 <MenuItem
                     title="Friends"
-                    to={config.routes.following}
+                    to={config.routes.friends}
                     icon={<UserGroupIcon />}
                     activeIcon={<UserGroupActiveIcon />}
                 />
                 <MenuItem
                     title="Explore"
-                    to={config.routes.live}
+                    to={config.routes.explore}
                     icon={<ExploreIcon />}
                     activeIcon={<LiveActiveIcon />}
                 />
@@ -69,7 +69,7 @@ function Sidebar() {
                 <MenuItem
                     title="Profile"
                     to={config.routes.profile}
-                    icon={<ProfileIcon />}
+                    icon={<ProfileIconSidebar />}
                     activeIcon={<LiveActiveIcon />}
                 />
             </Menu>
@@ -81,6 +81,7 @@ function Sidebar() {
                             Login
                         </Button>
                     </div>
+                    <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
                 </>
             ) : (
                 <>
