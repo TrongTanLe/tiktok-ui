@@ -9,10 +9,15 @@ import {
     UserGroupActiveIcon,
     LiveIcon,
     LiveActiveIcon,
+    ProfileIcon,
+    FollowingIcon,
+    ExploreIcon,
 } from '~/components/Icons';
 import * as userService from '~/services/userService';
 import config from '~/config';
 import { useEffect, useState } from 'react';
+import Button from '~/components/Button';
+import Footer from '../Footer';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +25,8 @@ const INIT_PAGE = 1;
 const PER_PAGE = 5;
 
 function Sidebar() {
+    const currentUser = true;
+
     const [page, setPage] = useState([INIT_PAGE]);
     const [suggestedUsers, setSuggestedUsers] = useState([]);
 
@@ -43,14 +50,45 @@ function Sidebar() {
                 <MenuItem
                     title="Following"
                     to={config.routes.following}
+                    icon={<FollowingIcon />}
+                    activeIcon={<UserGroupActiveIcon />}
+                />
+                <MenuItem
+                    title="Friends"
+                    to={config.routes.following}
                     icon={<UserGroupIcon />}
                     activeIcon={<UserGroupActiveIcon />}
                 />
+                <MenuItem
+                    title="Explore"
+                    to={config.routes.live}
+                    icon={<ExploreIcon />}
+                    activeIcon={<LiveActiveIcon />}
+                />
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
+                <MenuItem
+                    title="Profile"
+                    to={config.routes.profile}
+                    icon={<ProfileIcon />}
+                    activeIcon={<LiveActiveIcon />}
+                />
             </Menu>
-
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
-            <SuggestedAccounts label="Following accounts" />
+            {currentUser ? (
+                <>
+                    <div className={cx('farm')}>
+                        <p className={cx('plogin')}>Log in to follow creators, like videos, and view comments.</p>
+                        <Button large outline>
+                            Login
+                        </Button>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
+                    <SuggestedAccounts label="Following accounts" />
+                </>
+            )}
+            <Footer />
         </aside>
     );
 }

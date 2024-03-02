@@ -73,6 +73,10 @@
     }
 }
 
+.btn_action-icon {
+    padding: 0;
+}
+
 // Button sizes
 .small {
     min-width: 88px;
@@ -82,4 +86,5 @@
 .large {
     padding: 14px 16px;
     min-width: 140px;
+    width: 100%;
 }

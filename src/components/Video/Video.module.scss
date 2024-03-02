@@ -1,0 +1,18 @@
+.video-player {
+    height: 100%;
+    max-height: 590px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: unset;
+}
+
+video {
+    border-radius: 12px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
